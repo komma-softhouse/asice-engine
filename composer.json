@@ -1,0 +1,51 @@
+{
+    "name": "komma-softhouse/asice-engine",
+    "description": "ASiC-E containers with XAdES signatures for Estonian eID: ID-kaart, Smart-ID and Mobile-ID. Hash in, container out | Komma SoftHouse",
+    "keywords": ["komma-softhouse", "asice", "xades", "estonia", "eid", "id-kaart", "smart-id", "mobile-id", "digidoc", "signature"],
+    "homepage": "https://github.com/komma-softhouse/asice-engine",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Komma SoftHouse",
+            "email": "info@kommasofthouse.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Elias Olivtradet",
+            "email": "deoliveira.elias.eus@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-dom": "*",
+        "ext-openssl": "*",
+        "ext-zip": "*"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "pestphp/pest": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Komma\\Asice\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Komma\\Asice\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

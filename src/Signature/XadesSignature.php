@@ -278,8 +278,9 @@ final class XadesSignature
             $signedInfo->appendChild($reference);
         }
 
-        $signature->appendChild($document->createElementNS(self::DSIG, 'ds:SignatureValue', ''));
-        $this->element('SignatureValue')->setAttribute('Id', $this->signatureId.'-SIG');
+        $signatureValue = $document->createElementNS(self::DSIG, 'ds:SignatureValue', '');
+        $signatureValue->setAttribute('Id', $this->signatureId.'-SIG');
+        $signature->appendChild($signatureValue);
 
         $keyInfo = $document->createElementNS(self::DSIG, 'ds:KeyInfo');
         $keyInfo->setAttribute('Id', $this->signatureId.'-KEYINFO');

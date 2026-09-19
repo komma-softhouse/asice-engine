@@ -194,7 +194,10 @@ final class Container
     {
         $path = $path ?? $this->path ?? throw new RuntimeException('No path to save the container to.');
         $temporary = $path.'.tmp';
-        @unlink($temporary);
+
+        if (is_file($temporary)) {
+            unlink($temporary);
+        }
 
         $zip = new ZipArchive;
 
@@ -229,7 +232,7 @@ final class Container
         $path = tempnam(sys_get_temp_dir(), 'asice-');
         $this->save($path);
         $bytes = (string) file_get_contents($path);
-        @unlink($path);
+        unlink($path);
 
         return $bytes;
     }
